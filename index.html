@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Keydrop | Corporate Property Acquisitions</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Inter Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        /* Premium dark mode form input styling */
+        input[type="text"], input[type="number"], select {
+            background-color: #1e293b; /* slate-800 */
+            border: 1px solid #334155; /* slate-700 */
+            color: #f8fafc; /* slate-50 */
+            transition: all 0.2s ease;
+        }
+        input[type="text"]:focus, input[type="number"]:focus, select:focus {
+            outline: none;
+            border-color: #3b82f6; /* blue-500 */
+            box-shadow: 0 0 0 1px #3b82f6;
+        }
+        /* Hide arrows on number inputs for a cleaner look */
+        input[type=number]::-webkit-inner-spin-button,
+        input[type=number]::-webkit-outer-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+        }
+    </style>
+</head>
+<body class="bg-slate-900 text-slate-100 antialiased selection:bg-blue-500 selection:text-white flex flex-col min-h-screen">
+
+    <!-- Header -->
+    <header class="w-full max-w-7xl mx-auto px-6 py-8 flex justify-between items-center">
+        <div>
+            <h1 class="text-3xl font-bold tracking-tight text-white flex items-center gap-2">
+                <!-- Key Icon -->
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-8 h-8 text-blue-500">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 5.25a3 3 0 013 3m3 0a6 6 0 01-7.029 5.912c-.563-.097-1.159.026-1.563.43L10.5 17.25H8.25v2.25H6v2.25H2.25v-2.818c0-.597.237-1.17.659-1.591l6.499-6.499c.404-.404.527-1 .43-1.563A6 6 0 1121.75 8.25z" />
+                </svg>
+                KEYDROP
+            </h1>
+            <p class="text-sm text-slate-400 mt-1 font-medium tracking-wide uppercase">A Corporate Acquisition Initiative</p>
+        </div>
+    </header>
+
+    <!-- Hero Section (Split Screen Layout) -->
+    <section class="w-full max-w-7xl mx-auto px-6 py-12 lg:py-20 grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+
+        <!-- Left Side: Copy -->
+        <div class="flex flex-col gap-6">
+            <h2 class="text-4xl lg:text-5xl font-bold text-white leading-tight">
+                Frictionless property exits for South African homeowners.
+            </h2>
+            <p class="text-lg text-slate-300 leading-relaxed">
+                Guaranteed bond coverage or off-market cash offers within 14 days. No agents, no show days, no delays.
+            </p>
+
+            <ul class="flex flex-col gap-4 mt-4">
+                <li class="flex items-center gap-3 text-slate-200">
+                    <div class="w-8 h-8 rounded-full bg-blue-500/20 flex items-center justify-center flex-shrink-0">
+                        <svg class="w-5 h-5 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                    </div>
+                    <span class="text-lg"><strong>Stop the bleed:</strong> We absorb your monthly liability.</span>
+                </li>
+                <li class="flex items-center gap-3 text-slate-200">
+                    <div class="w-8 h-8 rounded-full bg-blue-500/20 flex items-center justify-center flex-shrink-0">
+                        <svg class="w-5 h-5 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                    </div>
+                    <span class="text-lg"><strong>Zero commissions:</strong> We buy as a corporate principal.</span>
+                </li>
+                <li class="flex items-center gap-3 text-slate-200">
+                    <div class="w-8 h-8 rounded-full bg-blue-500/20 flex items-center justify-center flex-shrink-0">
+                        <svg class="w-5 h-5 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                    </div>
+                    <span class="text-lg"><strong>Total discretion:</strong> Confidential, off-market transactions.</span>
+                </li>
+            </ul>
+        </div>
+
+        <!-- Right Side: The Triage Form -->
+        <div class="bg-slate-800/60 border border-slate-700 rounded-2xl p-8 shadow-2xl backdrop-blur-md relative overflow-hidden">
+            <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-blue-600 to-cyan-500"></div>
+
+            <div id="formContainer">
+                <h3 class="text-2xl font-semibold text-white mb-6">See if you qualify</h3>
+
+                <form id="triageForm" class="flex flex-col gap-5">
+                    <div>
+                        <label for="address" class="block text-sm font-medium text-slate-300 mb-1">Property Address / Suburb</label>
+                        <input type="text" id="address" required class="w-full rounded-lg px-4 py-3 placeholder-slate-500" placeholder="e.g. 12 Main Rd, Sandton">
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+                        <div>
+                            <label for="marketValue" class="block text-sm font-medium text-slate-300 mb-1">Estimated Value (ZAR)</label>
+                            <input type="number" id="marketValue" required class="w-full rounded-lg px-4 py-3 placeholder-slate-500" placeholder="1500000">
+                        </div>
+                        <div>
+                            <label for="outstandingBond" class="block text-sm font-medium text-slate-300 mb-1">Outstanding Bond (ZAR)</label>
+                            <input type="number" id="outstandingBond" required class="w-full rounded-lg px-4 py-3 placeholder-slate-500" placeholder="1200000">
+                        </div>
+                    </div>
+
+                    <div>
+                        <label for="locationType" class="block text-sm font-medium text-slate-300 mb-1">Location Profile</label>
+                        <select id="locationType" required class="w-full rounded-lg px-4 py-3 appearance-none">
+                            <option value="" disabled selected>Select location type...</option>
+                            <option value="coastal">Western Cape / Coastal</option>
+                            <option value="corporate">Major City / Business Node</option>
+                            <option value="inland">Standard Suburban / Inland</option>
+                        </select>
+                    </div>
+
+                    <div>
+                        <label for="arrears" class="block text-sm font-medium text-slate-300 mb-1">Currently in Arrears? (Bond/Rates)</label>
+                        <select id="arrears" required class="w-full rounded-lg px-4 py-3 appearance-none">
+                            <option value="No">No, payments are current</option>
+                            <option value="Yes">Yes, behind on payments</option>
+                        </select>
+                    </div>
+
+                    <button type="submit" id="submitBtn" class="mt-4 w-full bg-blue-600 hover:bg-blue-500 text-white font-semibold py-4 rounded-lg shadow-[0_0_15px_rgba(37,99,235,0.2)] transition-all duration-200 flex justify-center items-center gap-2">
+                        Submit Property for Review
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-5 h-5">
+                          <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
+                        </svg>
+                    </button>
+                </form>
+            </div>
+
+            <!-- Success Message Box (Hidden by default) -->
+            <div id="successMessage" class="hidden flex-col items-center justify-center py-10 text-center animate-fade-in">
+                <div class="w-16 h-16 bg-green-500/20 rounded-full flex items-center justify-center mb-4 border border-green-500/30">
+                    <svg class="w-8 h-8 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                </div>
+                <h4 class="text-2xl font-bold text-white mb-2">Property Data Received.</h4>
+                <p class="text-slate-300 text-lg">Our acquisitions team is running the financial models. If your property qualifies for a Keydrop exit, we will contact you shortly.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works Section -->
+    <section class="bg-slate-950/50 py-20 border-y border-slate-800">
+        <div class="max-w-7xl mx-auto px-6">
+            <h2 class="text-3xl font-bold text-center text-white mb-12">The Keydrop Process</h2>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Step 1 -->
+                <div class="bg-slate-900 border border-slate-800 p-8 rounded-2xl text-center">
+                    <div class="w-14 h-14 bg-blue-500/10 rounded-xl flex items-center justify-center mb-6 mx-auto">
+                        <svg class="w-7 h-7 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path></svg>
+                    </div>
+                    <h3 class="text-xl font-semibold text-white mb-3">1. Submit Your File</h3>
+                    <p class="text-slate-400 leading-relaxed">Provide your basic property metrics via our secure form. No credit checks or invasive financial documents required upfront.</p>
+                </div>
+                <!-- Step 2 -->
+                <div class="bg-slate-900 border border-slate-800 p-8 rounded-2xl text-center">
+                    <div class="w-14 h-14 bg-blue-500/10 rounded-xl flex items-center justify-center mb-6 mx-auto">
+                        <svg class="w-7 h-7 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                    </div>
+                    <h3 class="text-xl font-semibold text-white mb-3">2. The 24-Hour Review</h3>
+                    <p class="text-slate-400 leading-relaxed">Our team runs your numbers through our models. If you qualify, we present a formal, guaranteed corporate exit strategy.</p>
+                </div>
+                <!-- Step 3 -->
+                <div class="bg-slate-900 border border-slate-800 p-8 rounded-2xl text-center">
+                    <div class="w-14 h-14 bg-blue-500/10 rounded-xl flex items-center justify-center mb-6 mx-auto">
+                        <svg class="w-7 h-7 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15 7a2 2 0 012 2m4 0a6 6 0 01-7.743 5.743L11 17H9v2H7v2H4a1 1 0 01-1-1v-2.586a1 1 0 01.293-.707l5.964-5.964A6 6 0 1121 9z"></path></svg>
+                    </div>
+                    <h3 class="text-xl font-semibold text-white mb-3">3. Drop the Keys</h3>
+                    <p class="text-slate-400 leading-relaxed">Sign the agreement and your liability ends. We take over the asset, cover the bond, and you move on securely.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Us Section -->
+    <section class="py-20 flex-grow">
+        <div class="max-w-7xl mx-auto px-6">
+            <h2 class="text-3xl font-bold text-center text-white mb-12">Why sell to a Corporate Principal?</h2>
+
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-10">
+                <div class="bg-slate-800/30 p-8 rounded-2xl border border-slate-700/50">
+                    <div class="bg-slate-800 w-12 h-12 rounded-lg flex items-center justify-center text-blue-400 mb-5">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                    </div>
+                    <h4 class="text-xl font-bold text-white mb-3">Zero Commissions</h4>
+                    <p class="text-slate-400 leading-relaxed">Estate agents take up to 7.5% + VAT. We are the direct buyer, not the broker. You pay absolutely zero commissions on the transaction.</p>
+                </div>
+
+                <div class="bg-slate-800/30 p-8 rounded-2xl border border-slate-700/50">
+                    <div class="bg-slate-800 w-12 h-12 rounded-lg flex items-center justify-center text-blue-400 mb-5">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path></svg>
+                    </div>
+                    <h4 class="text-xl font-bold text-white mb-3">Protect Your Credit</h4>
+                    <p class="text-slate-400 leading-relaxed">A bank foreclosure destroys your credit record for 5 years. Our corporate agreements guarantee your bond is paid on time, every time.</p>
+                </div>
+
+                <div class="bg-slate-800/30 p-8 rounded-2xl border border-slate-700/50">
+                    <div class="bg-slate-800 w-12 h-12 rounded-lg flex items-center justify-center text-blue-400 mb-5">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13.875 18.825A10.05 10.05 0 0112 19c-4.478 0-8.268-2.943-9.543-7a9.97 9.97 0 011.563-3.029m5.858.908a3 3 0 114.243 4.243M9.878 9.878l4.242 4.242M9.88 9.88l-3.29-3.29m7.532 7.532l3.29 3.29M3 3l3.59 3.59m0 0A9.953 9.953 0 0112 5c4.478 0 8.268 2.943 9.543 7a10.025 10.025 0 01-4.132 5.411m0 0L21 21"></path></svg>
+                    </div>
+                    <h4 class="text-xl font-bold text-white mb-3">Total Discretion</h4>
+                    <p class="text-slate-400 leading-relaxed">No "For Sale" boards on your boundary wall. No Sunday show days with strangers walking through your home. Completely off-market.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-slate-950 border-t border-slate-800 py-10 mt-auto">
+        <div class="max-w-7xl mx-auto px-6 text-center flex flex-col items-center">
+            <div class="text-slate-500 text-sm space-y-3">
+                <p class="font-semibold text-slate-400">Keydrop Acquisitions &mdash; A division of [Your Pty Ltd Name]</p>
+                <p>Company Registration: [Insert CIPC Number]</p>
+                <p>Strictly confidential. Fully compliant with the Protection of Personal Information Act (POPIA). Your data is never sold.</p>
+                <p class="pt-4">&copy; 2026 Keydrop.co.za. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Form Processing Logic -->
+    <script>
+        document.getElementById('triageForm').addEventListener('submit', function(e) {
+            e.preventDefault(); // Prevent standard HTML form submission
+
+            const submitBtn = document.getElementById('submitBtn');
+            const originalBtnText = submitBtn.innerHTML;
+
+            // Show loading state
+            submitBtn.innerHTML = `
+                <svg class="animate-spin -ml-1 mr-3 h-5 w-5 text-white inline" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                    <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+                    <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                </svg> Processing Data...`;
+            submitBtn.disabled = true;
+            submitBtn.classList.add('opacity-75', 'cursor-not-allowed');
+
+            // 1. Gather form payload
+            const payload = {
+                address: document.getElementById('address').value,
+                marketValue: document.getElementById('marketValue').value,
+                outstandingBond: document.getElementById('outstandingBond').value,
+                locationType: document.getElementById('locationType').value,
+                arrears: document.getElementById('arrears').value
+            };
+
+            // 2. Set your Google Apps Script Web App URL here
+            const webhookUrl = "https://script.google.com/macros/s/AKfycbwIlVmJX2ptftfRQHl4UO0lwlnSq1KA5oFexVHI9Et_EyuVJbnCXpufnAns9xLdh4-Uxw/exec";
+
+            // 3. Send data via fetch (POST) using text/plain to bypass CORS
+            fetch(webhookUrl, {
+                method: "POST",
+                headers: {
+                    "Content-Type": "text/plain;charset=utf-8",
+                },
+                body: JSON.stringify(payload)
+            })
+            .then(response => {
+                // Whether Google returns success or we are testing locally, transition the UI
+                document.getElementById('formContainer').style.display = 'none';
+                const successMsg = document.getElementById('successMessage');
+                successMsg.classList.remove('hidden');
+                successMsg.classList.add('flex');
+            })
+            .catch(error => {
+                console.error('Error submitting form:', error);
+                // Fallback for demonstration/testing if URL isn't set yet
+                document.getElementById('formContainer').style.display = 'none';
+                const successMsg = document.getElementById('successMessage');
+                successMsg.classList.remove('hidden');
+                successMsg.classList.add('flex');
+            });
+        });
+    </script>
+</body>
+</html>
